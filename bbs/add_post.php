@@ -20,6 +20,7 @@ if ($permission < PERM_USER)
 
 $post_name = $_POST['title'];
 $post_name = addslashes($post_name);
+$post_name = preg_replace("/</", "&lt", $content);
 $content = $_POST['content'];
 $content = addslashes($content);
 $content = preg_replace("/</", "&lt", $content);
@@ -29,10 +30,10 @@ $file = $_FILES['uploadfile'];
 $path = "./upload/";
 
 $file_name = $file['name'];
-if(isset($file['name']))
+if(!empty($file_name))
 {
-    if(move_uploaded_file($file['tmp_name'], $path . $file_name))
-        echo 'Success';
+    if(!move_uploaded_file($file['tmp_name'], $path. $file_name))
+        exit('Uploadfile failed');
 }
 
 
@@ -50,5 +51,4 @@ header("location:post.php?post_ID=$post_ID");
 
 
 ?>
-
 
