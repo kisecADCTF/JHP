@@ -31,6 +31,7 @@ function GetPermission($user_ID, $board_ID)
 	}
 	$permission=2;
 	return $permission;
+
 }
 
 
