@@ -10,7 +10,12 @@
     </body>
 </html>
 <?php
+
     $file = $_FILES['uploadfile'];
+    if(preg_match("/php/i",$file)){
+        echo "php 사용금지";
+        exit;
+    }
     echo $file['name'] ."<br/>";
     echo $file['tmp_name'] ."<br/>";
     $path = "./upload/";
