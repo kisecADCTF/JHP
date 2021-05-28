@@ -8,7 +8,16 @@ if (!isset($_POST['submit']))
 
 $username = $_POST['username'];
 $username = addslashes($username);
-$password = MD5($_POST['password']);
+if (strlen($username) <= 4 or strlen($username) >= 10)
+{
+    exit('잘못된 아이디 길이입니다.');
+}
+$pwd = $_POST['password'];
+if (strlen($pwd) <= 7)
+{
+    exit('잘못된 비밀번호 길이입니다.');
+}
+$password = MD5($pwd);
 $permission = $_POST['permission'];
 $permission = addslashes($permission);
 

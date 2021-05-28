@@ -17,6 +17,7 @@ if ($permission < PERM_USER)
 
 $content = $_POST['content'];
 $content = addslashes($content);
+$content = preg_replace("/</", "&lt", $content);
 $now = date('Y-m-d H:i:s', time());
 $query = "INSERT INTO post_reply(user_ID, post_ID, create_time, content) ";
 $query .= "VALUES ('$user_ID', '$post_ID', '$now', '$content')";
