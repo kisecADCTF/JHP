@@ -1,7 +1,7 @@
 <?php
     $file_name = $_GET['upload_file'];
-    $save = preg_replace('/', '',$file_name);
-    $file_path = "./upload/". $file_name;
+    $av = preg_replace('/../','WWW',$file_name);
+    $file_path = "./upload/". $av;
     $file_size = filesize($file_path);
     header("Pragma: public");
     header("expires: 0");

@@ -22,6 +22,7 @@ $post_name = $_POST['title'];
 $post_name = addslashes($post_name);
 $content = $_POST['content'];
 $content = addslashes($content);
+$content = preg_replace("/</", "&lt", $content);
 $now = date('Y-m-d H:i:s', time());
 
 $file = $_FILES['uploadfile'];
