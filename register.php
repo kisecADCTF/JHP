@@ -45,7 +45,7 @@ $options = '';
         </p>
         <p>
             <label for="permission">Default permission :</label>
-            <select class="form-control" id="permission" name="permission" autoComplete="off" onChange="PermissionText(this)" >
+            <select class="form-control" id="permission" name="permission" autoComplete="off" >
                 <?php /*echo($options); */?>
                 <option value=2 selected=\"selected\">user</option>
             </select>
