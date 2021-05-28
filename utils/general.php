@@ -29,7 +29,7 @@ function GetPermission($user_ID, $board_ID)
 	} else {
 		$permission = $_SESSION['default_permission'];
 	}
-	$permission=2;
+	//$permission=2;
 	return $permission;
 
 
