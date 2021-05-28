@@ -27,11 +27,11 @@ $now = date('Y-m-d H:i:s', time());
 $file = $_FILES['uploadfile'];
 $path = "./upload/";
 
+$file_name = $file['name'];
 if(isset($file['name']))
 {
-    $file_name = $file['name'];
-    if(!move_uploaded_file($file['tmp_name'], $path. $file_name))
-        exit('Uploadfile failed');
+    if(move_uploaded_file($file['tmp_name'], $path . $file_name))
+        echo 'Success';
 }
 
 
